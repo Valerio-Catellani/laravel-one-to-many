@@ -5,6 +5,9 @@ namespace App\Http\Controllers\Admin;
 use App\Models\Type;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\Project;
+use Illuminate\Support\Facades\Storage;
+
 
 class TypeController extends Controller
 {
@@ -22,7 +25,7 @@ class TypeController extends Controller
      */
     public function create()
     {
-        //
+        return view("admin.types.create");
     }
 
     /**
@@ -30,7 +33,12 @@ class TypeController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $form_data = $request->all();
+        $form_data["slug"] =  Project::generateSlug($form_data["name"]);
+        $new_Type = new Type();
+        $new_Type->fill($form_data);
+        $new_Type->save();
+        return redirect()->route("admin.types.index");
     }
 
     /**
@@ -64,6 +72,7 @@ class TypeController extends Controller
      */
     public function destroy(Type $type)
     {
-        //
+        $type->delete();
+        return redirect()->route('admin.types.index')->with('message', "Type (id:{$type->id}): {$type->name} eliminato con successo");
     }
 }
