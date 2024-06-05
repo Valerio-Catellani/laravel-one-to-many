@@ -42,17 +42,16 @@
                 </div>
 
                 <div class="mb-3">
-                    <label for="category_id" class="form-label">Select Category</label>
-                    <select name="category_id" id="category_id"
-                        class="form-control @error('category_id') is-invalid @enderror">
-                        <option value="">Select Category</option>
-                        @foreach ($categories as $category)
-                            <option value="{{ $category->id }}"
-                                {{ $category->id == $project->category_id ? 'selected' : '' }}>{{ $category->name }}
+                    <label for="type_id" class="form-label text-white">Select Type</label>
+                    <select name="type_id" id="type_id" class="form-control @error('type_id') is-invalid @enderror">
+                        <option value="">Select Type</option>
+                        @foreach ($types as $type)
+                            <option value="{{ $type->id }}" {{ $type->id == $project->type_id ? 'selected' : '' }}>
+                                {{ $type->name }}
                             </option>
                         @endforeach
                     </select>
-                    @error('category_id')
+                    @error('type_id')
                         <div class="invalid-feedback">{{ $message }}</div>
                     @enderror
                 </div>
@@ -72,7 +71,7 @@
                         <label for="image" class="form-label text-white">Image (URL)</label>
                         <input type="file" accept="image/*"
                             class="form-control @error('image_url') is-invalid err-animation @enderror" id="upload_image"
-                            name="image_url" value="{{ old('image_url', $project->image_url) }}" required>
+                            name="image_url" value="{{ old('image_url', $project->image_url) }}">
                         @error('image_url')
                             <div class="alert alert-danger">{{ $message }}</div>
                         @enderror

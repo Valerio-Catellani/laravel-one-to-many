@@ -26,7 +26,7 @@ class StoreProjectRequest extends FormRequest
             'description' => 'nullable',
             'created' => 'required|date_format:Y-m-d',
             'image_url' => 'nullable|image',
-            'category_id' => 'nullable|exists:categories,id'
+            'type_id' => 'nullable|exists:types,id'
         ];
     }
 
@@ -39,7 +39,7 @@ class StoreProjectRequest extends FormRequest
             'description.max' => 'The field :attribute must be no more than 255 characters.',
             'created.required' => 'The field :attribute is required.',
             'created.date_format' => 'The field :attribute must be a valid date.',
-            'category_id.exists' => 'The field :attribute must exist.',
+            'type_id.exists' => 'The field :attribute must exist.',
             'image_url.max' => 'The field :attribute must be no more than 255 characters.',
         ];
     }

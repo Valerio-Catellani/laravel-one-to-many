@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Str;
 
-class Category extends Model
+class Type extends Model
 {
     use HasFactory;
     protected $fillable = ['name', 'slug'];
@@ -20,7 +20,7 @@ class Category extends Model
     {
         $slug = Str::slug($name, '-');
         $count = 1;
-        while (Category::where('slug', $slug)->first()) {
+        while (Type::where('slug', $slug)->first()) {
             $slug = Str::of($name)->slug('-') . "-{$count}";
             $count++;
         }

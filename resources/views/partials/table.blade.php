@@ -4,7 +4,7 @@
             <th scope="col">#id Project</th>
             <th scope="col">Project Title</th>
             <th scope="col" class="d-none d-xl-table-cell">Created at</th>
-            <th scope="col" class="d-none d-lg-table-cell">Categories</th>
+            <th scope="col" class="d-none d-lg-table-cell">Type</th>
             <th scope="col" class="d-none d-lg-table-cell">Techonlogies</th>
             <th scope="col" class=" {{ Route::currentRouteName() === 'admin.projects.index' ? '' : 'd-none' }}">
                 Amministration Actions</th>
@@ -17,10 +17,10 @@
                 <td><a>{{ $element->title }}</a></td>
                 <td class="d-none d-xl-table-cell"><a>{{ $element->created }}</a></td>
                 <td class="d-none d-lg-table-cell"><a>
-                        @if ($element->category)
-                            {{ $element->category->name }}
+                        @if ($element->type)
+                            {{ $element->type->name }}
                         @else
-                            Nessuna categoria
+                            Nessun tipo
                         @endif
                     </a></td>
                 <td class="d-none d-lg-table-cell"><a>{{ $element->technologies }}</a>

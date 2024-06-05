@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Models\Project;
-use App\Models\Category;
+use App\Models\Type;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Functions\Helpers as Help;
@@ -32,8 +32,8 @@ class ProjectController extends Controller
      */
     public function create()
     {
-        $categories = Category::all();
-        return view("admin.projects.create", compact("categories"));
+        $types = Type::all();
+        return view("admin.projects.create", compact("types"));
     }
 
     /**
@@ -41,7 +41,6 @@ class ProjectController extends Controller
      */
     public function store(StoreProjectRequest $request)
     {
-        //     dd($request->validated());
         $form_data = $request->validated();
         $form_data["slug"] =  Project::generateSlug($form_data["title"]);
         if ($request->hasFile('image_url')) {
@@ -67,8 +66,8 @@ class ProjectController extends Controller
      */
     public function edit(Project $project)
     {
-        $categories = Category::all();
-        return view("admin.projects.edit", compact("project",  "categories"));
+        $types = Type::all();
+        return view("admin.projects.edit", compact("project",  "types"));
     }
 
     /**

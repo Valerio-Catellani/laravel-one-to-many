@@ -3,7 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use App\Models\Category;
+use App\Models\Type;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Str;
 
@@ -18,7 +18,7 @@ class Project extends Model
         'categories',
         'technologies',
         'image_url',
-        'category_id'
+        'type_id'
     ];
 
     public static function generateSlug($title)
@@ -37,8 +37,8 @@ class Project extends Model
         return $this->belongsTo(User::class);
     }
 
-    public function category()
+    public function type()
     {
-        return $this->belongsTo(Category::class);
+        return $this->belongsTo(Type::class);
     }
 }

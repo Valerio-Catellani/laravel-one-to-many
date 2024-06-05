@@ -15,19 +15,19 @@
                             alt="{{ $project->title }}">
                     </div>
                     <div class="col-8 d-flex flex-column text-white">
-                        <h4 class="mb-1">Title</h4>
+                        <h4 class="mb-2">Title</h4>
                         <h6>{{ $project->title }}</h6>
-                        <h4 class="mb-1">Description</h4>
+                        <h4 class="mb-2">Description</h4>
                         <p>{{ $project->description }}</p>
-                        <h4 class="mb-1">Created At</h4>
+                        <h4 class="mb-2">Created At</h4>
                         <h6>{{ $project->created }}</h6>
-                        <h4 class="mb-1">Category</h4>
-                        @if ($project->category)
-                            <h6>{{ $project->category->name }}</h6>
+                        <h4 class="mb-2">Type</h4>
+                        @if ($project->type)
+                            <h6>{{ $project->type->name }}</h6>
                         @else
-                            <h6>No Category</h6>
+                            <h6>No Type</h6>
                         @endif
-                        <h4 class="mb-1">Technology</h4>
+                        <h4 class="mb-2">Technology</h4>
                         @if ($project->technology)
                             <h6>{{ $project->technology->name }}</h6>
                         @else

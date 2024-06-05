@@ -1,11 +1,11 @@
-@section('title', 'Admin Dashboard / Categories')
+@section('title', 'Admin Dashboard / Types')
 @extends('layouts.admin')
 
 
 @section('content')
     <section class="hype-w-85x100 mx-auto py-5">
-        <h1 class="mb-3">Categories</h1>
-        <a role="button" class="mine-custom-btn mb-3" href="{{ route('admin.categories.create') }}">Add a Project</a>
+        <h1 class="mb-3">Types</h1>
+        <a role="button" class="mine-custom-btn mb-3" href="{{ route('admin.types.create') }}">Add a Type</a>
         @if (session()->has('message'))
             <div class="alert alert-success">
                 {{ session()->get('message') }}
@@ -15,15 +15,15 @@
             class="table table-dark table-hover shadow mb-2 mt-3 hype-unselectable hype-table-clickable">
             <thead>
                 <tr>
-                    <th scope="col">#id Category</th>
-                    <th scope="col">Category Name</th>
-                    <th scope="col" class="d-none d-xl-table-cell">Category Slug</th>
+                    <th scope="col">#id Type</th>
+                    <th scope="col">Type Name</th>
+                    <th scope="col" class="d-none d-xl-table-cell">Type Slug</th>
                     <th scope="col" class=" text-center">
                         Amministration Actions</th>
                 </tr>
             </thead>
             <tbody>
-                @foreach ($categories as $element)
+                @foreach ($types as $element)
                     <tr>
                         <td><a>{{ $element->id }} </a></td>
                         <td><a>{{ $element->name }}</a></td>
@@ -31,19 +31,19 @@
                         </td>
                         <td class="">
                             <div class="d-flex justify-content-center">
-                                <a href="{{ route('admin.categories.show', $element) }}" class="table-icon m-1">
+                                <a href="{{ route('admin.types.show', $element) }}" class="table-icon m-1">
                                     <div class="icon-container">
                                         <i
                                             class=" fa-solid fa-eye fs-3 text-active-tertiary hype-text-shadow hype-hover-size"></i>
                                     </div>
                                 </a>
-                                <a href="{{ route('admin.categories.edit', $element) }}" class="table-icon m-1">
+                                <a href="{{ route('admin.types.edit', $element) }}" class="table-icon m-1">
                                     <div class="icon-container">
                                         <i
                                             class=" fa-solid fa-pen-to-square fs-3 text-active-tertiary hype-text-shadow hype-hover-size"></i>
                                     </div>
                                 </a>
-                                <form id="delete-form" action="{{ route('admin.categories.destroy', $element->id) }}"
+                                <form id="delete-form" action="{{ route('admin.types.destroy', $element->id) }}"
                                     method="POST">
                                     @csrf
                                     @method('DELETE')
