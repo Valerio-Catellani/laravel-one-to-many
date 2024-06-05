@@ -18,8 +18,7 @@
                     <th scope="col">#id Category</th>
                     <th scope="col">Category Name</th>
                     <th scope="col" class="d-none d-xl-table-cell">Category Slug</th>
-                    <th scope="col"
-                        class=" {{ Route::currentRouteName() === 'admin.categories.index' ? '' : 'd-none' }}">
+                    <th scope="col" class=" text-center">
                         Amministration Actions</th>
                 </tr>
             </thead>
@@ -30,7 +29,7 @@
                         <td><a>{{ $element->name }}</a></td>
                         <td class="d-none d-xl-table-cell"><a>{{ $element->slug }}</a></td>
                         </td>
-                        <td class=" {{ Route::currentRouteName() === 'admin.categories.index' ? '' : 'd-none' }}">
+                        <td class="">
                             <div class="d-flex justify-content-center">
                                 <a href="{{ route('admin.categories.show', $element) }}" class="table-icon m-1">
                                     <div class="icon-container">
