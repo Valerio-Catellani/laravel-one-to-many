@@ -1,0 +1,38 @@
+[
+    {
+        "id": 1,
+        "name": "design",
+        "slug": "design",
+        "icon": ""
+    },
+    {
+        "id": 2,
+        "name": "front-end",
+        "slug": "front-end",
+        "icon": ""
+    },
+    {
+        "id": 3,
+        "name": "back-end",
+        "slug": "back-end",
+        "icon": ""
+    },
+    {
+        "id": 4,
+        "name": "database",
+        "slug": "database",
+        "icon": ""
+    },
+    {
+        "id": 5,
+        "name": "security",
+        "slug": "security",
+        "icon": ""
+    },
+    {
+        "id": 6,
+        "name": "full-stack",
+        "slug": "full-stack",
+        "icon": ""
+    }
+]

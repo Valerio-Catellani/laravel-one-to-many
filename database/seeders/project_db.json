@@ -1,0 +1,82 @@
+[
+    {
+        "title": "Progetto Alpha",
+        "slug": "progetto-alpha",
+        "description": "Progetto di sviluppo software innovativo.",
+        "created": "2023-05-15 08:45:30",
+        "technologies": "Laravel, Vue.js",
+        "image_url": "https://example.com/image1.jpg"
+    },
+    {
+        "title": "Beta Platform",
+        "slug": "beta-platform",
+        "description": "Piattaforma per la gestione dei dati aziendali.",
+        "created": "2023-06-20 10:15:45",
+        "technologies": "React, Node.js",
+        "image_url": "https://example.com/image2.jpg"
+    },
+    {
+        "title": "Gamma Analytics",
+        "slug": "gamma-analytics",
+        "description": "Sistema di analisi dei dati in tempo reale.",
+        "created": "2023-07-10 14:30:00",
+        "technologies": "Python, Django",
+        "image_url": "https://example.com/image3.jpg"
+    },
+    {
+        "title": "Delta CRM",
+        "slug": "delta-crm",
+        "description": "Soluzione CRM per la gestione dei clienti.",
+        "created": "2023-08-05 09:20:15",
+        "technologies": "PHP, MySQL",
+        "image_url": "https://example.com/image4.jpg"
+    },
+    {
+        "title": "Epsilon Mobile",
+        "slug": "epsilon-mobile",
+        "description": "Applicazione mobile per il tracciamento delle attività.",
+        "created": "2023-09-12 11:45:50",
+        "technologies": "Flutter, Dart",
+        "image_url": "https://example.com/image5.jpg"
+    },
+    {
+        "title": "Zeta Commerce",
+        "slug": "zeta-commerce",
+        "description": "Piattaforma e-commerce per negozi online.",
+        "created": "2023-10-02 13:30:25",
+        "technologies": "Magento, PHP",
+        "image_url": "https://example.com/image6.jpg"
+    },
+    {
+        "title": "Eta Logistics",
+        "slug": "eta-logistics",
+        "description": "Sistema di gestione della logistica e dei trasporti.",
+        "created": "2023-11-15 16:10:40",
+        "technologies": "Java, Spring Boot",
+        "image_url": "https://example.com/image7.jpg"
+    },
+    {
+        "title": "Theta Health",
+        "slug": "theta-health",
+        "description": "Applicazione per la gestione della salute e del benessere.",
+        "created": "2023-12-01 18:25:55",
+        "technologies": "Kotlin, Android",
+        "image_url": "https://example.com/image8.jpg"
+    },
+    {
+        "title": "Iota Finance",
+        "slug": "iota-finance",
+        "description": "Piattaforma per la gestione delle finanze personali.",
+        "created": "2024-01-10 07:15:35",
+        "technologies": "Ruby on Rails, PostgreSQL",
+        "image_url": "https://example.com/image9.jpg"
+    },
+    {
+        "title": "Kappa Education",
+        "slug": "kappa-education",
+        "description": "Portale educativo per corsi online.",
+        "created": "2024-02-22 12:50:45",
+        "technologies": "Moodle, PHP",
+        "image_url": "https://example.com/image10.jpg"
+    }
+]
