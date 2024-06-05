@@ -33,45 +33,66 @@ class TypeController extends Controller
      */
     public function store(Request $request)
     {
-        $form_data = $request->all();
-        $form_data["slug"] =  Project::generateSlug($form_data["name"]);
-        $new_Type = new Type();
-        $new_Type->fill($form_data);
-        $new_Type->save();
+        $validated = $request->validate([
+            'name' => 'required|max:255|min:3'
+        ], [
+            'title.required' => 'The field :attribute is required.',
+            'title.max' => 'The field :attribute must be no more than 255 characters.',
+            'title.min' => 'The field :attribute must be at least 3 characters.',
+        ]);
+        $validated["slug"] =  Type::generateSlug($validated["name"]);
+        $new_type = new Type();
+        $new_type->fill($validated);
+        $new_type->save();
         return redirect()->route("admin.types.index");
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(Type $type)
+    public function show($slug)
     {
-        //dd($category->posts);
-        return view('admin.types.show', compact('type'));
+        $type = Type::where('slug', $slug)->firstOrFail();
+        return view("admin.types.show", compact("type"));
     }
 
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Type $type)
+    public function edit($slug)
     {
-        //
+        $type = Type::where('slug', $slug)->firstOrFail();
+        return view("admin.types.edit", compact("type"));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Type $type)
+    public function update(Request $request, $slug)
     {
-        //
+        $type = Type::where('slug', $slug)->firstOrFail();
+        $validated = $request->validate([
+            'name' => 'required|max:255|min:3'
+        ], [
+            'title.required' => 'The field :attribute is required.',
+            'title.max' => 'The field :attribute must be no more than 255 characters.',
+            'title.min' => 'The field :attribute must be at least 3 characters.',
+        ]);
+        if ($type->name != $validated["name"]) {
+            $validated["slug"] =  Type::generateSlug($validated["name"]);
+        }
+        $type->fill($validated);
+        $type->update();
+        return redirect()->route("admin.types.index")->with('message', "Type (id:{$type->id}): {$type->name} modificato con successo");
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Type $type)
+    public function destroy($slug)
     {
+        $type = Type::where('slug', $slug)->firstOrFail();
         $type->delete();
         return redirect()->route('admin.types.index')->with('message', "Type (id:{$type->id}): {$type->name} eliminato con successo");
     }

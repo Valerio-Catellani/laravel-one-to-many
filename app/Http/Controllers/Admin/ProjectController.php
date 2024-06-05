@@ -56,47 +56,50 @@ class ProjectController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Project $project)
+    public function show($slug)
     {
+        $project = Project::where('slug', $slug)->firstOrFail();
         return view("admin.projects.show", compact("project"));
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Project $project)
+    public function edit($slug)
     {
         $types = Type::all();
+        $project = Project::where('slug', $slug)->firstOrFail();
         return view("admin.projects.edit", compact("project",  "types"));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateProjectRequest $request, $id)
+    public function update(UpdateProjectRequest $request, $slug)
     {
-        $project_to_change =  Project::findOrFail($id);
+        $project = Project::where('slug', $slug)->firstOrFail();
         $form_data = $request->validated();
-        if ($project_to_change->title != $form_data["title"]) {
+        if ($project->title != $form_data["title"]) {
             $form_data["slug"] =  Project::generateSlug($form_data["title"]);
         }
         if ($request->hasFile('image_url')) {
-            if ($project_to_change->image_url) {
-                Storage::delete($project_to_change->image_url);
+            if ($project->image_url) {
+                Storage::delete($project->image_url);
             }
             $img_path = Storage::put('my_images', $request->image_url);
             $form_data['image_url'] = $img_path;
         }
-        $project_to_change->fill($form_data);
-        $project_to_change->update();
-        return redirect()->route("admin.projects.index")->with('message', "Project (id:{$project_to_change->id}): {$project_to_change->title} modificato con successo");
+        $project->fill($form_data);
+        $project->update();
+        return redirect()->route("admin.projects.index")->with('message', "Project (id:{$project->id}): {$project->title} modificato con successo");
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Project $project)
+    public function destroy($slug)
     {
+        $project = Project::where('slug', $slug)->firstOrFail();
         $project->delete();
         return redirect()->route('admin.projects.index')->with('message', "Project (id:{$project->id}): {$project->title} eliminato con successo");
     }

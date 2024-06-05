@@ -1,4 +1,4 @@
-@section('title', 'Admin Dashboard / Projects')
+@section('title', 'Project: ' . $project->title)
 @extends('layouts.admin')
 
 
@@ -38,7 +38,7 @@
                                 <i role="button" type="submit"
                                     class="fa-solid fa-arrow-left fs-1 text-white hype-text-shadow hype-hover-size"></i>
                             </a>
-                            <a href="{{ route('admin.projects.edit', $project) }}">
+                            <a href="{{ route('admin.projects.edit', $project->slug) }}">
                                 <i role="button" type="submit"
                                     class="fa-solid fa-pen-to-square fs-1 text-active-tertiary hype-text-shadow hype-hover-size"></i>
                             </a>

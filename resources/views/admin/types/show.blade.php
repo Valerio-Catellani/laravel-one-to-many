@@ -1,4 +1,4 @@
-@section('title', 'Admin Dashboard / Projects')
+@section('title', 'Type ' . $type->name)
 @extends('layouts.admin')
 
 
@@ -38,13 +38,13 @@
                                 </td>
                                 <td>
                                     <div class="d-flex justify-content-center">
-                                        <a href="{{ route('admin.projects.show', $project) }}" class="table-icon m-1">
+                                        <a href="{{ route('admin.projects.show', $project->slug) }}" class="table-icon m-1">
                                             <div class="icon-container">
                                                 <i
                                                     class=" fa-solid fa-eye fs-3 text-active-tertiary hype-text-shadow hype-hover-size"></i>
                                             </div>
                                         </a>
-                                        <a href="{{ route('admin.projects.edit', $project) }}" class="table-icon m-1">
+                                        <a href="{{ route('admin.projects.edit', $project->slug) }}" class="table-icon m-1">
                                             <div class="icon-container">
                                                 <i
                                                     class=" fa-solid fa-pen-to-square fs-3 text-active-tertiary hype-text-shadow hype-hover-size"></i>
@@ -70,6 +70,10 @@
                         @endforeach
                     </tbody>
                 </table>
+                <div class="text-center w-25 mx-auto d-flex gap-2">
+                    <a href="{{ route('admin.types.index') }}"
+                        class="mine-custom-btn min-custom-btn-grey mt-3 w-100">Back</a>
+                </div>
             </div>
 
         </div>

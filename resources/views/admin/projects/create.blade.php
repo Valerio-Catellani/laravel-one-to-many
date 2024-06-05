@@ -74,7 +74,7 @@
                 </div>
                 <br>
                 <div class="text-center w-25 mx-auto d-flex gap-2">
-                    <button type="submit" class="mine-custom-btn mt-3 w-100">Add the Project</button>
+                    <button type="submit" class="mine-custom-btn mt-3 w-100">Create</button>
                     <a href="{{ route('admin.projects.index') }}"
                         class="mine-custom-btn min-custom-btn-grey mt-3 w-100">Back</a>
                 </div>

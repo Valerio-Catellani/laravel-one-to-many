@@ -25,8 +25,8 @@ Route::get('/', [HomeController::class, 'index'])->name('home');
 
 Route::middleware('auth')->name('admin.')->prefix('admin')->group(function () {
     Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
-    Route::resource('projects', ProjectController::class);
-    Route::resource('types', TypeController::class);
+    Route::resource('projects', ProjectController::class)->parameters(['projects' => 'slug']);
+    Route::resource('types', TypeController::class)->parameters(['types' => 'slug']);
     //altre rotte...
 });
 

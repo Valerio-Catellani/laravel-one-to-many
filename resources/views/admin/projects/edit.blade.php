@@ -10,7 +10,7 @@
             <h1 class="text-center hype-text-shadow text-white fw-bolder">Edit Project({{ $project->id }}) :
                 {{ $project->title }}</h1>
 
-            <form action="{{ route('admin.projects.update', $project->id) }}" method="POST" enctype="multipart/form-data">
+            <form action="{{ route('admin.projects.update', $project->slug) }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 @method('PUT')
                 <div class="mb-3 @error('title') err-animation @enderror">
@@ -78,7 +78,7 @@
                     </div>
                     <br>
                     <div class="text-center w-25 mx-auto d-flex gap-2">
-                        <button type="submit" class="mine-custom-btn mt-3 w-100">Edit the Project</button>
+                        <button type="submit" class="mine-custom-btn mt-3 w-100">Save</button>
                         <a href="{{ route('admin.projects.index') }}"
                             class="mine-custom-btn min-custom-btn-grey mt-3 w-100">Back</a>
                     </div>

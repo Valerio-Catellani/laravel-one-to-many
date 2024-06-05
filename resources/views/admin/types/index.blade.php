@@ -1,4 +1,4 @@
-@section('title', 'Admin Dashboard / Types')
+@section('title', 'All Types')
 @extends('layouts.admin')
 
 
@@ -31,19 +31,19 @@
                         </td>
                         <td class="">
                             <div class="d-flex justify-content-center">
-                                <a href="{{ route('admin.types.show', $element) }}" class="table-icon m-1">
+                                <a href="{{ route('admin.types.show', $element->slug) }}" class="table-icon m-1">
                                     <div class="icon-container">
                                         <i
                                             class=" fa-solid fa-eye fs-3 text-active-tertiary hype-text-shadow hype-hover-size"></i>
                                     </div>
                                 </a>
-                                <a href="{{ route('admin.types.edit', $element) }}" class="table-icon m-1">
+                                <a href="{{ route('admin.types.edit', $element->slug) }}" class="table-icon m-1">
                                     <div class="icon-container">
                                         <i
                                             class=" fa-solid fa-pen-to-square fs-3 text-active-tertiary hype-text-shadow hype-hover-size"></i>
                                     </div>
                                 </a>
-                                <form id="delete-form" action="{{ route('admin.types.destroy', $element->id) }}"
+                                <form id="delete-form" action="{{ route('admin.types.destroy', $element->slug) }}"
                                     method="POST">
                                     @csrf
                                     @method('DELETE')

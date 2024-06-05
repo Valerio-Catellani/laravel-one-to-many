@@ -14,12 +14,12 @@
                     class="fa-solid fa-home fs-4 pe-3"></i><span class="hype-text-collapse">Home</span></a>
         </li>
         <li
-            class="nav-item {{ Route::currentRouteName() === 'admin.projects.index' || Route::currentRouteName() === 'admin.projects.create' || Route::currentRouteName() === 'admin.projects.show' || Route::currentRouteName() === 'admin.projects.update' ? 'active' : '' }}">
+            class="nav-item {{ Route::currentRouteName() === 'admin.projects.index' || Route::currentRouteName() === 'admin.projects.create' || Route::currentRouteName() === 'admin.projects.show' || Route::currentRouteName() === 'admin.projects.edit' ? 'active' : '' }}">
             <a class="nav-link text-white " aria-current="page" href="{{ route('admin.projects.index') }}"><i
                     class="fa-solid fa-book-open fs-4 pe-3"></i><span class="hype-text-collapse">Projects</span></a>
         </li>
         <li
-            class="nav-item {{ (Route::currentRouteName() === 'admin.types.index' || Route::currentRouteName() === 'admin.types.show' ? 'active' : Route::currentRouteName() === 'admin.types.update') ? 'active' : '' }}">
+            class="nav-item {{ Route::currentRouteName() === 'admin.types.index' || Route::currentRouteName() === 'admin.types.show' || Route::currentRouteName() === 'admin.types.edit' || Route::currentRouteName() === 'admin.types.create' ? 'active' : '' }}">
             <a class="nav-link text-white " aria-current="page" href="{{ route('admin.types.index') }}"><i
                     class="fa-solid fa-layer-group fs-4 pe-3"></i><span class="hype-text-collapse">Types</span></a>
         </li>
