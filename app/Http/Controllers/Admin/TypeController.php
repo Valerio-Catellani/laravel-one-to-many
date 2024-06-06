@@ -6,6 +6,7 @@ use App\Models\Type;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\Project;
+use App\Models\Technology;
 use Illuminate\Support\Facades\Storage;
 
 
@@ -53,7 +54,8 @@ class TypeController extends Controller
     public function show($slug)
     {
         $type = Type::where('slug', $slug)->firstOrFail();
-        return view("admin.types.show", compact("type"));
+        $technologies = Technology::all();
+        return view("admin.types.show", compact("type", "technologies"));
     }
 
 

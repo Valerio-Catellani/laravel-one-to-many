@@ -39,9 +39,6 @@
                     @enderror
                 </div>
 
-
-
-
                 <div class="mb-3">
                     <label for="type_id" class="form-label text-white">Select Type</label>
                     <select name="type_id" id="type_id" class="form-control @error('type_id') is-invalid @enderror">
@@ -56,6 +53,22 @@
                         <div class="invalid-feedback">{{ $message }}</div>
                     @enderror
                 </div>
+
+                <div class="mb-3">
+                    <label for="technology_id" class="form-label text-white">Select Techonologies</label>
+                    <div id="technology_id">
+                        @foreach ($technologies as $technology)
+                            <div class="form-check form-check-inline text-white">
+                                <input class="form-check-input" type="checkbox" name="technologies[]" id="inlineCheckbox1"
+                                    value="{{ $technology->id }}"
+                                    {{ in_array($technology->id, old('technologies', [])) ? 'checked' : '' }}>
+                                <label class="form-check-label" for="inlineCheckbox1">{{ $technology->name }}</label>
+                            </div>
+                        @endforeach
+                    </div>
+                </div>
+
+
 
                 <div class="mb-3 @error('image_url') err-animation @enderror d-flex gap-5 align-items-center">
                     <div class="w-25 text-center">

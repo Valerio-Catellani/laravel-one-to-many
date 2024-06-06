@@ -24,7 +24,18 @@
                             Nessun tipo
                         @endif
                     </a></td>
-                <td class="d-none d-lg-table-cell"><a>{{ $element->technologies }}</a>
+                <td class="d-none d-lg-table-cell">
+                    @if ($element->technologies)
+                        <div class="d-flex align-items-center my-3 gap-3 ms-2">
+                            @foreach ($element->technologies as $technology)
+                                <i class="{{ $technology->icon }} fs-3 hype-text-shadow position-relative"
+                                    style="color: #{{ $technology->color }};">
+                                </i>
+                            @endforeach
+                        </div>
+                    @else
+                        <h6>No Technology</h6>
+                    @endif
                 </td>
                 <td class=" {{ Route::currentRouteName() === 'admin.projects.index' ? '' : 'd-none' }}">
                     <div class="d-flex justify-content-center">

@@ -15,24 +15,31 @@
                             alt="{{ $project->title }}">
                     </div>
                     <div class="col-8 d-flex flex-column text-white">
-                        <h4 class="mb-2">Title</h4>
-                        <h6>{{ $project->title }}</h6>
-                        <h4 class="mb-2">Description</h4>
-                        <p>{{ $project->description }}</p>
-                        <h4 class="mb-2">Created At</h4>
-                        <h6>{{ $project->created }}</h6>
-                        <h4 class="mb-2">Type</h4>
+                        <h4>Title</h4>
+                        <h6 class="mb-4">{{ $project->title }}</h6>
+                        <h4>Description</h4>
+                        <p class="mb-4">{{ $project->description }}</p>
+                        <h4>Created At</h4>
+                        <h6 class="mb-4">{{ $project->created }}</h6>
+                        <h4>Type</h4>
                         @if ($project->type)
-                            <h6>{{ $project->type->name }}</h6>
+                            <h6 class="mb-4">{{ $project->type->name }}</h6>
                         @else
-                            <h6>No Type</h6>
+                            <h6 class="mb-4">No Type</h6>
                         @endif
-                        <h4 class="mb-2">Technology</h4>
-                        @if ($project->technology)
-                            <h6>{{ $project->technology->name }}</h6>
-                        @else
-                            <h6>No Technology</h6>
-                        @endif
+                        <h4>Technology</h4>
+                        <div class="mb-4">
+                            @if ($project->technologies)
+                                @foreach ($project->technologies as $technology)
+                                    <span class="badge text-black fs-5 mx-1 hype-shadow-white"
+                                        style="background-color: #{{ $technology->color }};">
+                                        {{ $technology->name }}
+                                    </span>
+                                @endforeach
+                            @else
+                                <h6>No Technology</h6>
+                            @endif
+                        </div>
                         <div class="d-flex justify-content-center align-items-center gap-5 mt-auto">
                             <a href="{{ route('admin.projects.index') }}">
                                 <i role="button" type="submit"

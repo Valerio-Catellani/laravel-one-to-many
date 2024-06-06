@@ -16,12 +16,18 @@
         <li
             class="nav-item {{ Route::currentRouteName() === 'admin.projects.index' || Route::currentRouteName() === 'admin.projects.create' || Route::currentRouteName() === 'admin.projects.show' || Route::currentRouteName() === 'admin.projects.edit' ? 'active' : '' }}">
             <a class="nav-link text-white " aria-current="page" href="{{ route('admin.projects.index') }}"><i
-                    class="fa-solid fa-book-open fs-4 pe-3"></i><span class="hype-text-collapse">Projects</span></a>
+                    class="fa-solid fa-diagram-project fs-4 pe-3"></i><span
+                    class="hype-text-collapse">Projects</span></a>
         </li>
         <li
             class="nav-item {{ Route::currentRouteName() === 'admin.types.index' || Route::currentRouteName() === 'admin.types.show' || Route::currentRouteName() === 'admin.types.edit' || Route::currentRouteName() === 'admin.types.create' ? 'active' : '' }}">
             <a class="nav-link text-white " aria-current="page" href="{{ route('admin.types.index') }}"><i
                     class="fa-solid fa-layer-group fs-4 pe-3"></i><span class="hype-text-collapse">Types</span></a>
+        </li>
+        <li
+            class="nav-item {{ Route::currentRouteName() === 'admin.technologies.index' || Route::currentRouteName() === 'admin.technologies.show' || Route::currentRouteName() === 'admin.technologies.edit' || Route::currentRouteName() === 'admin.technologies.create' ? 'active' : '' }}">
+            <a class="nav-link text-white " aria-current="page" href="{{ route('admin.technologies.index') }}"><i
+                    class="fa-solid fa-microchip fs-4 pe-3"></i><span class="hype-text-collapse">technologies</span></a>
         </li>
     </ul>
 </nav>

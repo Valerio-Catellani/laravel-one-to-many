@@ -28,18 +28,13 @@
                                 <td><a>{{ $project->id }} </a></td>
                                 <td><a>{{ $project->title }}</a></td>
                                 <td class="d-none d-xl-table-cell"><a>{{ $project->created }}</a></td>
-                                <td class="d-none d-lg-table-cell">
-                                    @if ($project->technologies)
-                                        <div class="d-flex align-items-center my-3 gap-3 ms-2">
-                                            @foreach ($project->technologies as $technology)
-                                                <span class="badge text-bg-danger">
-                                                    {{ $technology->name }}
-                                                </span>
-                                            @endforeach
-                                        </div>
-                                    @else
-                                        <h6>No Technology</h6>
-                                    @endif
+                                <td class="d-none d-lg-table-cell"><a>
+                                        @if ($project->technologies)
+                                            {{ $project->technologies->name }}
+                                        @else
+                                            Nessuna Tecnologia
+                                        @endif
+                                    </a></td>
                                 </td>
                                 <td>
                                     <div class="d-flex justify-content-center">
