@@ -32,7 +32,7 @@
                             @if ($project->technologies)
                                 @foreach ($project->technologies as $technology)
                                     <span class="badge text-black fs-5 mx-1 hype-shadow-white"
-                                        style="background-color: #{{ $technology->color }};">
+                                        style="background-color: {{ $technology->color }};">
                                         {{ $technology->name }}
                                     </span>
                                 @endforeach

@@ -3,161 +3,161 @@
         "id": 1,
         "name": "html",
         "slug": "html",
-        "color": "ff9000",
+        "color": "#ff9000",
         "icon": "fab fa-html5"
     },
     {
         "id": 2,
         "name": "css",
         "slug": "css",
-        "color": "00a9ff",
+        "color": "#00a9ff",
         "icon": "fab fa-css3-alt"
     },
     {
         "id": 3,
         "name": "vue",
         "slug": "vue",
-        "color": "41B883",
+        "color": "#41B883",
         "icon": "fab fa-vuejs"
     },
     {
         "id": 4,
         "name": "scss",
         "slug": "scss",
-        "color": "CD6799",
+        "color": "#CD6799",
         "icon": "fab fa-sass"
     },
     {
         "id": 5,
         "name": "php",
         "slug": "php",
-        "color": "4F5B93",
+        "color": "#4F5B93",
         "icon": "fab fa-php"
     },
     {
         "id": 6,
         "name": "laravel",
         "slug": "laravel",
-        "color": "FF2D20",
+        "color": "#FF2D20",
         "icon": "fas fa-laravel"
     },
     {
         "id": 7,
         "name": "mysql",
         "slug": "mysql",
-        "color": "4479A1",
+        "color": "#4479A1",
         "icon": "fas fa-database"
     },
     {
         "id": 8,
         "name": "javascript",
         "slug": "javascript",
-        "color": "F7DF1E",
+        "color": "#F7DF1E",
         "icon": "fab fa-js-square"
     },
     {
         "id": 9,
         "name": "typescript",
         "slug": "typescript",
-        "color": "007ACC",
+        "color": "#007ACC",
         "icon": "fa-solid fa-laptop-code"
     },
     {
         "id": 10,
         "name": "react",
         "slug": "react",
-        "color": "61DAFB",
+        "color": "#61DAFB",
         "icon": "fab fa-react"
     },
     {
         "id": 11,
         "name": "angular",
         "slug": "angular",
-        "color": "DD0031",
+        "color": "#DD0031",
         "icon": "fab fa-angular"
     },
     {
         "id": 12,
         "name": "jQuery",
         "slug": "jquery",
-        "color": "0769AD",
+        "color": "#0769AD",
         "icon": "fab fa-js"
     },
     {
         "id": 13,
         "name": "Bootstrap",
         "slug": "bootstrap",
-        "color": "563D7C",
+        "color": "#563D7C",
         "icon": "fab fa-bootstrap"
     },
     {
         "id": 14,
         "name": "Node.js",
         "slug": "nodejs",
-        "color": "339933",
+        "color": "#339933",
         "icon": "fab fa-node-js"
     },
     {
         "id": 15,
         "name": "Express.js",
         "slug": "expressjs",
-        "color": "000000",
+        "color": "#919191",
         "icon": "fa-solid fa-laptop-code"
     },
     {
         "id": 16,
         "name": "MongoDB",
         "slug": "mongodb",
-        "color": "47A248",
+        "color": "#47A248",
         "icon": "fas fa-database"
     },
     {
         "id": 17,
         "name": "Python",
         "slug": "python",
-        "color": "3776AB",
+        "color": "#3776AB",
         "icon": "fab fa-python"
     },
     {
         "id": 18,
         "name": "Django",
         "slug": "django",
-        "color": "092E20",
+        "color": "#092E20",
         "icon": "fa-solid fa-laptop-code"
     },
     {
         "id": 19,
         "name": "Flask",
         "slug": "flask",
-        "color": "000000",
+        "color": "#d6d6d6",
         "icon": "fa-solid fa-laptop-code"
     },
     {
         "id": 20,
         "name": "Ruby",
         "slug": "ruby",
-        "color": "CC342D",
+        "color": "#CC342D",
         "icon": "fas fa-gem"
     },
     {
         "id": 21,
         "name": "Rails",
         "slug": "rails",
-        "color": "CC0000",
+        "color": "#CC0000",
         "icon": "fas fa-train"
     },
     {
         "id": 22,
         "name": "C++",
         "slug": "cpp",
-        "color": "00599C",
+        "color": "#00599C",
         "icon": "fas fa-code"
     },
     {
         "id": 23,
         "name": "C#",
         "slug": "csharp",
-        "color": "239120",
+        "color": "#239120",
         "icon": "fas fa-code"
     }
 ]

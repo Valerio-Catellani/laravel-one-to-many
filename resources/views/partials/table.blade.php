@@ -29,7 +29,7 @@
                         <div class="d-flex align-items-center my-3 gap-3 ms-2">
                             @foreach ($element->technologies as $technology)
                                 <i class="{{ $technology->icon }} fs-3 hype-text-shadow position-relative"
-                                    style="color: #{{ $technology->color }};">
+                                    style="color: {{ $technology->color }};">
                                 </i>
                             @endforeach
                         </div>
